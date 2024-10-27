@@ -7,31 +7,32 @@ import axios, { Axios } from "axios";
 export default function SignupPage(){
     const router = useRouter();
     const [user, setUser] = React.useState({
-        email:"",
-        password:"",
-        username:"",
+        email: "",
+        password: "",
+        username: "",
     })
-
     const [buttonDisabled, setButtonDisabled] = React.useState(false);
     const [loading, setLoading] = React.useState(false);
 
-    const onSignup = async ()=>{
-         try {
+    const onSignup = async () => {
+        try {
             setLoading(true);
-           const response= await axios.post("/api/users/signup", user);
-           console.log("SignUp success", response.data);
-           
-           router.push("/login")
-         } catch (error: any) {
-            console.log("Signup failed", error.message);  
+            const response = await axios.post("/api/users/signup", user);
+            console.log("Signup success", response.data);
+            router.push("/login");
+            
+        } catch (error:any) {
+            console.log("Signup failed", error.message);
+            
+        }finally {
+            setLoading(false);
         }
     }
 
-    useEffect (()=>{
-        if(user.email.length > 0 && user.password.length > 0 && user.username.length > 0){
-           setButtonDisabled(false);
-        }
-        else{
+    useEffect(() => {
+        if(user.email.length > 0 && user.password.length > 0 && user.username.length > 0) {
+            setButtonDisabled(false);
+        } else {
             setButtonDisabled(true);
         }
     }, [user]);
