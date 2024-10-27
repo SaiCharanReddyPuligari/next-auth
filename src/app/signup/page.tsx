@@ -3,7 +3,6 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios, { Axios } from "axios";
-import toast from "react-hot-toast";
 
 export default function SignupPage(){
     const router = useRouter();
@@ -24,10 +23,8 @@ export default function SignupPage(){
            
            router.push("/login")
          } catch (error: any) {
-            console.log("Signup failed", error.message);
-            
-            toast.error(error.message);
-         }
+            console.log("Signup failed", error.message);  
+        }
     }
 
     useEffect (()=>{
