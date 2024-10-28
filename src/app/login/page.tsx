@@ -47,7 +47,7 @@ export default function LoginPage(){
         <p className="text-center text-white font-bold text-lg px-10">
           Welcome to our platform! We are committed to providing you with a seamless and secure experience.
           Log in to access a world of resources tailored just for you. Explore insights, connect with
-          professionals, and enhance your skills through our interactive community. We're excited to have
+          professionals, and enhance your skills through our interactive community. We are excited to have
           you onboard. Lets build something amazing together!
         </p>
       </div>

@@ -14,11 +14,7 @@ export default function VerifyEmailPage() {
            setVerified(true);
         } catch (error: unknown) {
             setError(true);
-            if (error instanceof Error && 'response' in error) {
-                console.log((error as any).response.data);  // Temporarily casting here if response type isn't specified
-            } else {
-                console.log("An unexpected error occurred");
-            }
+                console.log("An unexpected error occurred at verifyemail page");
         }  
     }
 

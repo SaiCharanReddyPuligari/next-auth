@@ -44,7 +44,7 @@ export default function SignupPage(){
         {/* Left Side (60%) */}
         <div className="w-3/5 bg-green-600 flex items-center justify-center p-8">
           <p className="text-center text-white font-bold text-lg px-10">
-          In web development, token-based authentication is a common method for handling user sign-in. When a user logs in, the server verifies their credentials such as username and password and, if valid, generates a token, often in JSON Web Token JWT format. This token is then sent to the user's client e.g., browser and stored, usually in local storage or as an HTTP-only cookie.
+          In web development, token-based authentication is a common method for handling user sign-in. When a user logs in, the server verifies their credentials such as username and password and, if valid, generates a token, often in JSON Web Token JWT format. This token is then sent to the users client e.g., browser and stored, usually in local storage or as an HTTP-only cookie.
           </p>
         </div>
   
