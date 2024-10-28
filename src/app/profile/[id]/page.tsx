@@ -1,13 +1,10 @@
-import { NextPage } from 'next';
-
+// Type for the incoming params
 interface Params {
-    params: {
-        id: string;
-    };
+    id: string;
 }
 
-// Use NextPage to properly type the component
-const UserProfile: NextPage<Params> = ({ params }) => {
+// Define the component
+const UserProfile = ({ params }: { params: Params }) => {
     return (
         <div className="flex items-center justify-center min-h-screen py-2 bg-gray-200">
             <div className="bg-white shadow-lg rounded-lg p-6 max-w-md w-full">
@@ -24,4 +21,5 @@ const UserProfile: NextPage<Params> = ({ params }) => {
     );
 };
 
+// Export the component as default
 export default UserProfile;
