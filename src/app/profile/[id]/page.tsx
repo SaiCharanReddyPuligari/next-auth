@@ -1,12 +1,4 @@
-// Type for the incoming params
-interface Params {
-    params: {
-        id: string; // Define 'id' as a property of 'params'
-    };
-}
-
-// Define the component
-const UserProfile = ({ params }: Params) => {
+const UserProfile = ({ params }: { params: { id: string } }) => {
     return (
         <div className="flex items-center justify-center min-h-screen py-2 bg-gray-200">
             <div className="bg-white shadow-lg rounded-lg p-6 max-w-md w-full">
