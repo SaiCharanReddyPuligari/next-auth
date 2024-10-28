@@ -23,25 +23,42 @@ export default function ProfilePage(){
         //use UseEffect to load details of the user
     }
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
-            <h1>Profile</h1>
-            <hr />
-            <p>Profile Page</p>
-            <h2
-            className="p-3 rounded bg-green-500"
-            >{data=== 'nothing' ? "Nothing": 
-                <Link href={`/profile/${data}`}>
-                    {data}
-                    </Link>}</h2>
-            <hr />
-            <button
-            onClick={logout}
-            className="bg-black mt-4 text-white font-bold py-2 px-4 rounded"
-            >Logout</button>
-            <button
-            onClick={getUserDetails}
-            className="bg-green-500 mt-4 text-white font-bold py-2 px-4 rounded"
-            >GetCurrentUserDetails</button>
-        </div>
+        <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      {/* Card Container */}
+      <div className="bg-gray-300 rounded-lg shadow-md p-8 max-w-md w-full flex flex-col items-center space-y-6">
+        
+        {/* Title */}
+        <h1 className="text-3xl font-semibold text-black">Profile</h1>
+        
+        <hr className="w-full border-gray-300" />
+
+        {/* Profile Data */}
+        <h2 className="p-3 rounded bg-green-200 text-green-800 font-medium w-full text-center">
+          {data === "nothing" ? (
+            "Nothing"
+          ) : (
+            <Link href={`/profile/${data}`}>
+              UserId : { data}
+            </Link>
+          )}
+        </h2>
+
+        <hr className="w-full border-gray-300" />
+
+        {/* Action Buttons */}
+        <button
+          onClick={logout}
+          className="bg-black text-white font-bold py-2 px-4 rounded w-full shadow-md hover:bg-gray-700 transition-all"
+        >
+          Logout
+        </button>
+        <button
+          onClick={getUserDetails}
+          className="bg-green-500 text-white font-bold py-2 px-4 rounded w-full shadow-md hover:bg-green-600 transition-all"
+        >
+          Get Current User Details
+        </button>
+      </div>
+    </div>
     )
 }

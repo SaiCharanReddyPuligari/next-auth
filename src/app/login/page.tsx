@@ -37,35 +37,63 @@ export default function LoginPage(){
          }
     },[user]);
     return (
-        <div className=" bg-green-400 flex flex-col items-center justify-center min-h-screen py-2 space-y-2">
-            <h1>{loading ? "Processing": "Login"}</h1>
-            <hr />
-           
-            <label htmlFor="email" className="py-3">Email</label>
-            <input 
-            className="p-4 border-gray-500 rounded-lg focus:outline-none focus:border-gray-600 hover:bg-black hover:text-white"
-            id="email"
-            type="email"
-            value={user.email}
-            onChange={(e)=> setUser({...user, email: e.target.value})}
-            placeholder="email"
-            />
-           
-           
-            <label htmlFor="password" className="py-3">Password</label>
-            <input 
-            className="p-4 border-gray-500 rounded-lg focus:outline-none focus:border-gray-600 hover:bg-black hover:text-white"
-            id="password"
-            type="password"
-            value={user.password}
-            onChange={(e)=> setUser({...user, password: e.target.value})}
-            placeholder="password"
-            />
-            <button
-            className="p-4 rounded-lg focus:outline-none hover:border-gray-600 hover:bg-black hover:text-white"
-            onClick={onLogin}
-            >{buttonDisabled ? "No Login": "Login"}</button>
-            <Link href="/signup">Visit Signup Page</Link>
-        </div>
+      <div className="flex min-h-screen">
+      {/* Left Side (60%) */}
+      <div className="w-3/5 bg-green-600 flex items-center justify-center p-8">
+        <p className="text-center text-white font-bold text-lg px-10">
+          Welcome to our platform! We are committed to providing you with a seamless and secure experience.
+          Log in to access a world of resources tailored just for you. Explore insights, connect with
+          professionals, and enhance your skills through our interactive community. We're excited to have
+          you onboard. Let’s build something amazing together!
+        </p>
+      </div>
+
+      {/* Right Side (40%) - Login Section */}
+      <div className="w-2/5 bg-green-500 flex flex-col items-center justify-center py-10 space-y-6">
+  <h1 className="text-3xl font-semibold text-gray-800">{loading ? "Processing..." : "Login"}</h1>
+  <hr className="border-gray-300 w-3/4" />
+
+  <div className="w-3/4 space-y-6">
+    {/* Email Input */}
+    <label htmlFor="email" className="block text-black font-medium">
+      Email
+    </label>
+    <input
+      id="email"
+      type="email"
+      value={user.email}
+      onChange={(e) => setUser({ ...user, email: e.target.value })}
+      placeholder="Enter your email"
+      className="w-full p-4 rounded-lg border border-gray-300 bg-gray-50 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pastel-blue hover:bg-gray-100"
+    />
+
+    {/* Password Input */}
+    <label htmlFor="password" className="block text-black font-medium">
+      Password
+    </label>
+    <input
+      id="password"
+      type="password"
+      value={user.password}
+      onChange={(e) => setUser({ ...user, password: e.target.value })}
+      placeholder="Enter your password"
+      className="w-full p-4 rounded-lg border border-gray-300 bg-gray-50 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pastel-blue hover:bg-gray-100"
+    />
+
+    {/* Login Button */}
+    <button
+      onClick={onLogin}
+      className="w-full p-4 rounded-lg bg-pastel-blue text-gray-50 font-semibold bg-black focus:outline-none focus:ring-2 focus:ring-pastel-blue focus:ring-opacity-50"
+    >
+      {buttonDisabled ? "No Login" : "Login"}
+    </button>
+
+    {/* Link to Signup */}
+    <Link href="/signup" className="text-pastel-blue hover:underline block text-center">
+      Visit Signup Page
+    </Link>
+  </div>
+</div>
+    </div>
     )
 }

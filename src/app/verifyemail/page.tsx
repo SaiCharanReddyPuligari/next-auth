@@ -31,22 +31,31 @@ export default function VerifyEmailPage() {
     },[token]);
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
-            <h1 className="text-4xl">Verify Email</h1>
-            <h2 className="p-2, bg-orange-500 text-black">{token? `${token}`: "No Token"}</h2>
-            {verified && (
-                <div>
-                    <h2 className="text-2xl">Email Verified</h2>
-                    <Link href="/login">
-                    Login</Link>
-                </div>
-            )}
-            {error && (
-                <div>
-                    <h2 className="text-2xl bg-red-500 text-black">Email Error</h2>
-                   
-                </div>
-            )}
-        </div>
+        <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="bg-white rounded-lg shadow-md p-8 max-w-md w-full flex flex-col items-center space-y-6">
+        <h1 className="text-3xl font-semibold text-gray-800">Verify Email</h1>
+
+        <h2 className="text-sm p-2 bg-orange-200 text-orange-800 rounded-md inline-block text-center font-medium">
+          {token ? `Token: ${token}` : "No Token"}
+        </h2>
+
+        {/* Verified Section */}
+        {verified && (
+          <div className="text-center space-y-8 p-4 border border-green-200 rounded-md bg-green-100">
+            <h2 className="text-xl font-semibold text-green-600">Email Verified</h2>
+            <Link href="/login" className="text-white rounded underline p-2 bg-black">
+              Login
+            </Link>
+          </div>
+        )}
+
+        {/* Error Section */}
+        {error && (
+          <div className="text-center space-y-4 p-4 border border-red-200 rounded-md bg-red-50">
+            <h2 className="text-xl font-semibold text-red-600">Error</h2>
+          </div>
+        )}
+      </div>
+    </div>
     )
 }
