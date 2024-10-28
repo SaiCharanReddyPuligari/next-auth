@@ -9,11 +9,14 @@ export default function ProfilePage(){
     const [data, setData] = useState("nothing")
     const logout = async() =>{
         try {
-            const response = await axios.get('/api/users/logout');
+            await axios.get('/api/users/logout');
             router.push('/login')
-        } catch (error:any) {
-            console.log(error.message);
-            
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                console.log("Home page failed to load", error.message);
+            } else {
+                console.log("Unable to load home page");
+            }
         }
     }
     const getUserDetails = async ()=>{

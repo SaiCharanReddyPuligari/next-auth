@@ -1,4 +1,9 @@
-export default function userProfile({params}:any){
+interface Params {
+    params: {
+      id: string;
+    };
+  }
+export default function userProfile({params}:Params){
 
     return (
         <div className="flex items-center justify-center min-h-screen py-2 bg-gray-200">

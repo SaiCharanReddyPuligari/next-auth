@@ -8,7 +8,7 @@ export default function Home() {
       <header className="sticky top-0 z-10 flex items-center  border-black border-b-2 bg-white text-black dark:bg-black px-8 py-4 shadow-md">
   {/* Logo on the Left */}
   <div className="mr-auto">
-   <a href="/">
+   <Link href={'/'}>
    <Image
       src="/next-auth.png" // Update with your actual logo path
       className="rounded-full"
@@ -17,7 +17,7 @@ export default function Home() {
       height={60}
       
     />
-   </a>
+   </Link>
   </div>
 
   {/* Navigation Buttons on the Right */}

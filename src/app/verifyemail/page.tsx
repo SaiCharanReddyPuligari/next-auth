@@ -12,11 +12,14 @@ export default function VerifyEmailPage() {
         try {
            await axios.post('/api/users/verifyemail',{token});
            setVerified(true);
-        } catch (error:any) {
+        } catch (error: unknown) {
             setError(true);
-            console.log(error.response.data);
-            
-        }
+            if (error instanceof Error && 'response' in error) {
+                console.log((error as any).response.data);  // Temporarily casting here if response type isn't specified
+            } else {
+                console.log("An unexpected error occurred");
+            }
+        }  
     }
 
     useEffect(()=>{

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import axios, { Axios } from "axios";
+import axios from "axios";
 
 export default function LoginPage(){
     const router = useRouter()
@@ -21,9 +21,13 @@ export default function LoginPage(){
             console.log("Login Success", response.data);
             router.push("/profile");
             
-         } catch (error:any) {
-            console.log("Login failed", error.message);
-         }
+         } catch (error: unknown) {
+            if (error instanceof Error) {
+                console.log("Login failed", error.message);
+            } else {
+                console.log("Login failed with an unknown error");
+            }
+        }
          finally{
             setLoading(false);
          }
@@ -44,7 +48,7 @@ export default function LoginPage(){
           Welcome to our platform! We are committed to providing you with a seamless and secure experience.
           Log in to access a world of resources tailored just for you. Explore insights, connect with
           professionals, and enhance your skills through our interactive community. We're excited to have
-          you onboard. Let’s build something amazing together!
+          you onboard. Lets build something amazing together!
         </p>
       </div>
 
