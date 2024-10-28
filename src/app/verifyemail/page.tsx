@@ -14,7 +14,7 @@ export default function VerifyEmailPage() {
            setVerified(true);
         } catch (error: unknown) {
             setError(true);
-                console.log("An unexpected error occurred at verifyemail page");
+                console.log("An unexpected error occurred at verifyemail page", error);
         }  
     }
 
