@@ -1,10 +1,4 @@
-// Type for the incoming params
-interface Params {
-    id: string;
-}
-
-// Define the component
-const UserProfile = ({ params }: { params: Params }) => {
+export default function UserProfile({params}: any) {
     return (
         <div className="flex items-center justify-center min-h-screen py-2 bg-gray-200">
             <div className="bg-white shadow-lg rounded-lg p-6 max-w-md w-full">
@@ -21,5 +15,3 @@ const UserProfile = ({ params }: { params: Params }) => {
     );
 };
 
-// Export the component as default
-export default UserProfile;
