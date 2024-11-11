@@ -68,7 +68,7 @@ const ResetPasswordPage = () => {
             onChange={(e) => setConfirmNewPassword(e.target.value)}
             placeholder="Confirm Password"
           />
-          <button className="w-full p-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 focus:outline-none">
+          <button className="w-full p-2 bg-black text-white rounded-lg hover:bg-orange-600 focus:outline-none">
             Reset Password
           </button>
         </form>

@@ -45,7 +45,7 @@ export default function LoginPage(){
       {/* Left Side (60%) */}
       <div className="w-3/5 bg-gray-100 flex items-center justify-center p-8">
         <p className="text-center text-black font-bold text-lg px-10">
-        For the login page, I used MongoDB for password authentication, securely storing and verifying user credentials. Additionally, I added a Forgot Password feature in MongoDB, allowing users to reset their passwords if needed. Upon clicking the "Forgot Password" link, users receive an email to reset their password, enhancing user experience and security. This method ensures login processes are both user-friendly and robust, providing reliable access control.
+        For the login page, I used MongoDB for password authentication, securely storing and verifying user credentials. Additionally, I added a Forgot Password feature in MongoDB, allowing users to reset their passwords if needed. Upon clicking the Forgot Password link, users receive an email to reset their password, enhancing user experience and security. This method ensures login processes are both user-friendly and robust, providing reliable access control.
         </p>
       </div>
 

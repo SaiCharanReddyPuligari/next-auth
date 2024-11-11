@@ -47,7 +47,7 @@ const ForgotPasswordPage = () => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
           />
-          <button className="w-full p-2 bg-orange-500 text-white rounded-lg mb-4 hover:bg-orange-600 focus:outline-none">
+          <button className="w-full p-2 bg-black text-white rounded-lg mb-4 hover:bg-orange-600 focus:outline-none">
             Send Email
           </button>
         </form>
