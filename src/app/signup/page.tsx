@@ -42,15 +42,15 @@ export default function SignupPage(){
     return (
         <div className="flex min-h-screen">
         {/* Left Side (60%) */}
-        <div className="w-3/5 bg-green-600 flex items-center justify-center p-8">
-          <p className="text-center text-white font-bold text-lg px-10">
-          In web development, token-based authentication is a common method for handling user sign-in. When a user logs in, the server verifies their credentials such as username and password and, if valid, generates a token, often in JSON Web Token JWT format. This token is then sent to the users client e.g., browser and stored, usually in local storage or as an HTTP-only cookie.
+        <div className="w-3/5 bg-gray-100 flex items-center justify-center p-8">
+          <p className="text-center text-black font-bold text-lg px-10">
+          For the signup page, I designed a secure process using MongoDB to store user data, incorporating JWT (JSON Web Token) for user session management. I implemented a Verify Token parameter within MongoDB, ensuring users confirm their email addresses for added security. When a user signs up, a verification link containing this token is sent via email. Once verified, the user's status updates, allowing them full access to the site. This setup improves user authentication and data integrity.
           </p>
         </div>
   
         {/* Right Side (40%) - Signup Section */}
-        <div className="w-2/5 bg-green-500 flex flex-col items-center justify-center py-10 space-y-6">
-          <h1 className="text-3xl font-semibold text-gray-800">{loading ? "Processing..." : "Signup"}</h1>
+        <div className="w-2/5 bg-white flex flex-col items-center justify-center py-10 space-y-6">
+          <h1 className="text-3xl px-4 py-2 bg-yellow-400 font-bold text-black rounded-lg border-2  border-b-4 border-r-4 duration-200 border-black">{loading ? "Processing..." : "Signup"}</h1>
           <hr className="border-gray-300 w-3/4" />
   
           <div className="w-3/4 space-y-6">
@@ -104,7 +104,7 @@ export default function SignupPage(){
   
             {/* Link to Login */}
             <Link href="/login" className="text-pastel-blue hover:underline block text-center">
-              Visit Login Page
+              Already registered? Visit Login Page
             </Link>
           </div>
         </div>

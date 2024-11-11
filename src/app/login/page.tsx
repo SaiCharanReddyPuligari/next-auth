@@ -43,18 +43,15 @@ export default function LoginPage(){
     return (
       <div className="flex min-h-screen">
       {/* Left Side (60%) */}
-      <div className="w-3/5 bg-green-600 flex items-center justify-center p-8">
-        <p className="text-center text-white font-bold text-lg px-10">
-          Welcome to our platform! We are committed to providing you with a seamless and secure experience.
-          Log in to access a world of resources tailored just for you. Explore insights, connect with
-          professionals, and enhance your skills through our interactive community. We are excited to have
-          you onboard. Lets build something amazing together!
+      <div className="w-3/5 bg-gray-100 flex items-center justify-center p-8">
+        <p className="text-center text-black font-bold text-lg px-10">
+        For the login page, I used MongoDB for password authentication, securely storing and verifying user credentials. Additionally, I added a Forgot Password feature in MongoDB, allowing users to reset their passwords if needed. Upon clicking the "Forgot Password" link, users receive an email to reset their password, enhancing user experience and security. This method ensures login processes are both user-friendly and robust, providing reliable access control.
         </p>
       </div>
 
       {/* Right Side (40%) - Login Section */}
-      <div className="w-2/5 bg-green-500 flex flex-col items-center justify-center py-10 space-y-6">
-  <h1 className="text-3xl font-semibold text-gray-800">{loading ? "Processing..." : "Login"}</h1>
+      <div className="w-2/5 bg-white flex flex-col items-center justify-center py-10 space-y-6">
+  <h1 className="text-3xl font-semibold px-4 py-2 bg-[#37ae92] text-black rounded-lg border-2  border-b-4 border-r-4 duration-200 border-black ">{loading ? "Processing..." : "Login"}</h1>
   <hr className="border-gray-300 w-3/4" />
 
   <div className="w-3/4 space-y-6">
@@ -94,8 +91,13 @@ export default function LoginPage(){
 
     {/* Link to Signup */}
     <Link href="/signup" className="text-pastel-blue hover:underline block text-center">
-      Visit Signup Page
+      New to the website? Visit Signup Page
     </Link>
+    <p className="mt-3">
+            <Link href="/forgotpassword" className="underline cursor-pointer">
+              Forgot Password
+            </Link>
+          </p>
   </div>
 </div>
     </div>

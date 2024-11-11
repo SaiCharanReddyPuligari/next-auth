@@ -18,7 +18,7 @@ const UserProfile = async ({ params }: UserProfileProps) => {
         <hr className="mb-4" />
         <p className="text-lg">
           Profile Page
-          <span className="p-2 ml-2 rounded bg-orange-500 text-black">
+          <span className="p-2 ml-2 rounded bg-black text-white">
             {id}
           </span>
         </p>
